@@ -67,6 +67,8 @@ const credentials = [
   },
 ];
 
+const pagesBasePath = process.env.PAGES_BASE_PATH ?? "";
+
 export default function Home() {
   return (
     <main>
@@ -118,7 +120,7 @@ export default function Home() {
             </a>
             <a
               className="button button-secondary"
-              href="/Shalom-Rubaramira-Resume.pdf"
+              href={`${pagesBasePath}/Shalom-Rubaramira-Resume.pdf`}
               download
             >
               Download résumé <span aria-hidden="true">↗</span>
