@@ -1,3 +1,5 @@
+import ThemeToggle from "./theme-toggle";
+
 const networkTools = [
   "GNS3",
   "MikroTik RouterOS",
@@ -71,7 +73,7 @@ const pagesBasePath = process.env.PAGES_BASE_PATH ?? "";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <a className="skip-link" href="#content">
         Skip to content
       </a>
@@ -85,18 +87,22 @@ export default function Home() {
           </span>
         </a>
 
-        <nav className="nav-links" aria-label="Primary navigation">
-          <a href="#work">Work</a>
-          <a href="#experience">Experience</a>
-          <a href="#capabilities">Capabilities</a>
-          <a className="nav-contact" href="#contact">
-            Contact <span aria-hidden="true">↗</span>
-          </a>
-        </nav>
+        <div className="header-actions">
+          <nav className="nav-links" aria-label="Primary navigation">
+            <a href="#work">Work</a>
+            <a href="#experience">Experience</a>
+            <a href="#capabilities">Capabilities</a>
+            <a className="nav-contact" href="#contact">
+              Contact <span aria-hidden="true">↗</span>
+            </a>
+          </nav>
+          <ThemeToggle />
+        </div>
       </header>
 
-      <section className="hero" id="top" aria-labelledby="hero-title">
-        <div className="hero-copy" id="content">
+      <main id="content" tabIndex={-1}>
+        <section className="hero" id="top" aria-labelledby="hero-title">
+        <div className="hero-copy">
           <div className="eyebrow">
             <span className="status-dot" aria-hidden="true" />
             FINAL-YEAR CYBERSECURITY STUDENT · GRADUATING 2026
@@ -123,12 +129,15 @@ export default function Home() {
               href={`${pagesBasePath}/Shalom-Rubaramira-Resume.pdf`}
               download
             >
-              Download résumé <span aria-hidden="true">↗</span>
+              Download résumé <span aria-hidden="true">↓</span>
             </a>
           </div>
         </div>
 
-        <div className="system-card" aria-label="Professional profile summary">
+        <aside className="system-card" aria-labelledby="system-card-title">
+          <h2 id="system-card-title" className="visually-hidden">
+            Professional profile summary
+          </h2>
           <div className="system-card-head">
             <span>SYS.PROFILE / 01</span>
             <span className="system-live">ONLINE</span>
@@ -149,30 +158,30 @@ export default function Home() {
 
           <div className="system-metrics">
             <div>
-              <strong>03</strong>
-              <span>campus network</span>
+              <strong>3</strong>
+              <span>campuses</span>
             </div>
             <div>
-              <strong>09</strong>
-              <span>access scenarios</span>
+              <strong>9</strong>
+              <span>validated scenarios</span>
             </div>
             <div>
               <strong>D</strong>
-              <span>Monash WAM</span>
+              <span>distinction WAM</span>
             </div>
           </div>
 
           <div className="system-card-foot">
-            <span>CARLTON, MELBOURNE VIC</span>
-            <span>UTC+10</span>
+            <span>MELBOURNE, AUSTRALIA</span>
+            <span>AEST / AEDT</span>
           </div>
-        </div>
+        </aside>
 
         <div className="hero-index" aria-hidden="true">
           <span>01</span>
           <span>PORTFOLIO / 2026</span>
         </div>
-      </section>
+        </section>
 
       <section className="section profile-section" aria-labelledby="profile-title">
         <div className="section-label">
@@ -208,6 +217,9 @@ export default function Home() {
           </div>
           <p className="section-note">PROJECTS / SIMULATIONS / 2025—2026</p>
         </div>
+        <h2 id="work-title" className="visually-hidden">
+          Selected work
+        </h2>
 
         <article className="feature-project">
           <div className="project-number">01</div>
@@ -216,7 +228,7 @@ export default function Home() {
               <span>MONASH UNIVERSITY · 2026</span>
               <span>NETWORK SECURITY</span>
             </div>
-            <h2 id="work-title">Secure multi-campus enterprise network</h2>
+            <h3>Secure multi-campus enterprise network</h3>
             <p className="project-lead">
               Architected and deployed a simulated three-campus enterprise network
               with segmented LANs, resilient routing, encrypted tunnels and
@@ -254,11 +266,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="tag-list" aria-label="Project tools">
+            <ul className="tag-list" aria-label="Project tools">
               {networkTools.map((tool) => (
-                <span key={tool}>{tool}</span>
+                <li key={tool}>{tool}</li>
               ))}
-            </div>
+            </ul>
           </div>
         </article>
 
@@ -291,11 +303,14 @@ export default function Home() {
           </div>
           <p className="section-note">FIELD LOG</p>
         </div>
+        <h2 id="experience-title" className="visually-hidden">
+          Professional experience
+        </h2>
 
         <div className="experience-grid">
           <div className="experience-title-block">
             <p className="mono-line">CURRENT ROLE</p>
-            <h2 id="experience-title">AI Marketing Strategy Intern</h2>
+            <h3>AI Marketing Strategy Intern</h3>
             <p className="experience-company">Tagline · Jun 2026—Present</p>
           </div>
           <div className="experience-copy">
@@ -383,7 +398,7 @@ export default function Home() {
         </div>
 
         <h2 id="education-title" className="visually-hidden">
-          Education and certifications
+          Education, credentials and achievements
         </h2>
 
         <div className="education-list">
@@ -399,29 +414,30 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="certification-grid">
-          <div>
+        <ul className="certification-grid" aria-label="Credentials and achievements">
+          <li>
             <span>2025</span>
             <p>Mastercard Cybersecurity Virtual Experience</p>
             <small>FORAGE</small>
-          </div>
-          <div>
+          </li>
+          <li>
             <span>2024</span>
             <p>Red Bull Wings for Life Charity Run</p>
             <small>TOP 100 NATIONALLY · MELBOURNE</small>
-          </div>
-          <div>
+          </li>
+          <li>
             <span>2022</span>
             <p>Duke of Edinburgh&apos;s Award</p>
             <small>BRONZE CERTIFICATION</small>
-          </div>
-          <div>
+          </li>
+          <li>
             <span>2021—22</span>
             <p>Preservation of the School Environment</p>
             <small>BEST IN CATEGORY</small>
-          </div>
-        </div>
+          </li>
+        </ul>
       </section>
+      </main>
 
       <footer id="contact" className="contact-section">
         <div className="contact-radar" aria-hidden="true">
@@ -441,7 +457,7 @@ export default function Home() {
             <span>worth securing.</span>
           </h2>
           <p>
-            I&apos;m based in Carlton, Melbourne and graduating at the end of 2026.
+            I&apos;m based in Melbourne, Australia and graduating at the end of 2026.
           </p>
           <div className="contact-links">
             <a href="mailto:shalommuhoozi@gmail.com">
@@ -459,6 +475,6 @@ export default function Home() {
           <a href="#top">BACK TO TOP ↑</a>
         </div>
       </footer>
-    </main>
+    </>
   );
 }
