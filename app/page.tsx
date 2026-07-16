@@ -111,7 +111,7 @@ export default function Home() {
           <h1 id="hero-title">
             Secure systems.
             <br />
-            <span>Clear thinking.</span>
+            <span className="hero-thinking">Clear thinking.</span>
           </h1>
 
           <p className="hero-intro">

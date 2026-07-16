@@ -361,6 +361,13 @@ a {
   -webkit-text-stroke: 1.5px var(--page-text);
 }
 
+.hero h1 .hero-thinking {
+  display: inline-block;
+  max-width: 100%;
+  font-size: 0.84em;
+  line-height: 0.88;
+}
+
 .hero-intro {
   max-width: 680px;
   margin: 0;
