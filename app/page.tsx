@@ -52,19 +52,19 @@ const capabilityGroups = [
 
 const credentials = [
   {
-    year: "2024—2026",
+    year: "2024-2026",
     title: "Bachelor of Information Technology",
     meta: "Cybersecurity · Monash University, Melbourne",
     detail: "Distinction WAM · Graduating December 2026",
   },
   {
-    year: "2022—2023",
+    year: "2022-2023",
     title: "Monash University Foundation Year",
     meta: "Monash College, Melbourne",
     detail: "High Distinctions in English, Mathematics and Accounting",
   },
   {
-    year: "2020—2022",
+    year: "2020-2022",
     title: "International GCSE",
     meta: "Galaxy International School Uganda, Kampala",
     detail: "A* Environmental Management · A Mathematics · A Physics",
@@ -85,7 +85,7 @@ export default function Home() {
           <span className="brand-mark">s.</span>
           <span className="brand-copy">
             <strong>Shalom Rubaramira</strong>
-            <small>CYBERSECURITY & CREATIVE CURIOSITY</small>
+            <small>CYBERSECURITY & RISK ANALYSIS</small>
           </span>
         </a>
 
@@ -119,7 +119,7 @@ export default function Home() {
           </h1>
 
           <p className="hero-intro">
-            I&apos;m Shalom—a Monash cybersecurity student turning network
+            I&apos;m Shalom, a Monash cybersecurity student turning network
             architecture, risk assessment and technical research into resilient,
             explainable outcomes.
           </p>
@@ -184,7 +184,7 @@ export default function Home() {
             <span>02</span>
             <p>SELECTED WORK</p>
           </div>
-          <p className="section-note">PROJECTS / SIMULATIONS / 2025—2026</p>
+          <p className="section-note">PROJECTS / SIMULATIONS / 2025-2026</p>
         </div>
         <h2 id="work-title" className="work-display" data-reveal>
           A curious mind.<br /><span>A practical approach.</span>
@@ -206,7 +206,7 @@ export default function Home() {
               <span className="topology-node topology-node-b">CAMPUS 02<small>SEGMENTED LAN</small></span>
               <span className="topology-node topology-node-c">CAMPUS 03<small>SEGMENTED LAN</small></span>
               <span className="topology-core">↗<small>IPsec / BGP</small></span>
-              <div className="project-art-caption"><span>CONNECTED. ENCRYPTED. VALIDATED.</span><span>01 — NETWORK ARCHITECTURE</span></div>
+              <div className="project-art-caption"><span>CONNECTED. ENCRYPTED. VALIDATED.</span><span>01 / NETWORK ARCHITECTURE</span></div>
             </div>
             <p className="project-lead">
               Architected and deployed a simulated three-campus enterprise network
@@ -290,7 +290,7 @@ export default function Home() {
           <div className="experience-title-block">
             <p className="mono-line">CURRENT ROLE</p>
             <h3>AI Marketing Strategy Intern</h3>
-            <p className="experience-company">Tagline · Jun 2026—Present</p>
+            <p className="experience-company">Tagline · Jun 2026 to Present</p>
           </div>
           <div className="experience-copy">
             <p>
@@ -410,7 +410,7 @@ export default function Home() {
             <small>BRONZE CERTIFICATION</small>
           </li>
           <li>
-            <span>2021—22</span>
+            <span>2021-22</span>
             <p>Preservation of the School Environment</p>
             <small>BEST IN CATEGORY</small>
           </li>
@@ -428,16 +428,17 @@ export default function Home() {
         <div className="contact-content" data-reveal>
           <div className="eyebrow">
             <span className="status-dot" aria-hidden="true" />
-            OPEN TO CYBERSECURITY, DIGITAL SYSTEMS & DATA OPPORTUNITIES
+            OPEN TO GRADUATE CYBERSECURITY OPPORTUNITIES
           </div>
           <h2>
-            Have something
+            Let&apos;s talk
             <br />
-            <span>in mind?</span>
+            <span>cybersecurity.</span>
           </h2>
           <p>
-            Let&apos;s build something worth securing. I&apos;m based in Melbourne,
-            Australia and graduating at the end of 2026.
+            I&apos;m seeking graduate opportunities in cybersecurity, with a focus
+            on network security and risk assessment. Based in Melbourne and
+            graduating from Monash University in December 2026.
           </p>
           <div className="contact-links">
             <a href="mailto:shalommuhoozi@gmail.com">

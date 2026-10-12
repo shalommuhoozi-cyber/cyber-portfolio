@@ -313,6 +313,7 @@ main:focus-visible { outline: none; }
   .certification-grid { grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 25px; }
   .contact-section { padding: 70px 22px 22px; }
   .contact-content h2 { font-size: clamp(60px, 13.3vw, 90px); }
+  .contact-content h2 span { font-size: .76em; }
   .contact-content .eyebrow { font-size: 8px; }
   .contact-links { flex-direction: column; gap: 27px; }
   .contact-links a { width: fit-content; max-width: 100%; }

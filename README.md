@@ -1,4 +1,4 @@
-# Shalom Rubaramira — Cybersecurity Portfolio
+# Shalom Rubaramira | Cybersecurity Portfolio
 
 A cyber-focused portfolio showcasing secure network architecture, risk
 assessment, technical delivery, professional experience, education and
