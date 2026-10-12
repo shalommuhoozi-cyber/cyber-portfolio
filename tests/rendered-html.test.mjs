@@ -34,11 +34,12 @@ test("server-renders the cybersecurity portfolio", async () => {
   assert.match(html, /Secure multi-campus enterprise network/i);
   assert.match(html, /Shalom-Rubaramira-Resume\.pdf/i);
   assert.match(html, /aria-label="Toggle light and dark mode"/i);
-  assert.match(html, /Sculpture colour palette/);
+  assert.match(html, /Explore security concepts/);
   assert.match(html, /aria-label="Play animations"/);
-  assert.match(html, /Iris/);
-  assert.match(html, /Tide/);
-  assert.match(html, /Ember/);
+  assert.match(html, /Threat detection/);
+  assert.match(html, /Encryption/);
+  assert.match(html, /Access control/);
+  assert.match(html, /aria-controls="radar-detail"/);
   assert.match(html, /<main[^>]+id="content"[^>]+tabindex="-1"/i);
   assert.equal((html.match(/<main\b/gi) ?? []).length, 1);
   assert.doesNotMatch(html, /UTC\+10|Carlton/i);
