@@ -1,4 +1,6 @@
 import ThemeToggle from "./theme-toggle";
+import PortfolioMotion from "./portfolio-motion";
+import SignalField from "./signal-field";
 
 const networkTools = [
   "GNS3",
@@ -73,17 +75,17 @@ const pagesBasePath = process.env.PAGES_BASE_PATH ?? "";
 
 export default function Home() {
   return (
-    <>
+    <PortfolioMotion>
       <a className="skip-link" href="#content">
         Skip to content
       </a>
 
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Shalom Rubaramira, home">
-          <span className="brand-mark">SR</span>
+          <span className="brand-mark">s.</span>
           <span className="brand-copy">
-            <strong>SHALOM RUBARAMIRA</strong>
-            <small>CYBERSECURITY · MELBOURNE</small>
+            <strong>Shalom Rubaramira</strong>
+            <small>CYBERSECURITY & CREATIVE CURIOSITY</small>
           </span>
         </a>
 
@@ -105,11 +107,13 @@ export default function Home() {
         <div className="hero-copy">
           <div className="eyebrow">
             <span className="status-dot" aria-hidden="true" />
-            FINAL-YEAR CYBERSECURITY STUDENT · GRADUATING 2026
+            MELBOURNE, AUSTRALIA · CLASS OF 2026
           </div>
 
+          <p className="hero-greeting">Hello, I&apos;m Shalom <span aria-hidden="true">↗</span></p>
+
           <h1 id="hero-title">
-            Secure systems.
+            Secure<br />systems.
             <br />
             <span className="hero-thinking">Clear thinking.</span>
           </h1>
@@ -134,56 +138,21 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="system-card" aria-labelledby="system-card-title">
-          <h2 id="system-card-title" className="visually-hidden">
-            Professional profile summary
-          </h2>
-          <div className="system-card-head">
-            <span>SYS.PROFILE / 01</span>
-            <span className="system-live">ONLINE</span>
-          </div>
-
-          <div className="network-map" aria-hidden="true">
-            <div className="node node-core">SR</div>
-            <div className="node node-a">NET</div>
-            <div className="node node-b">RISK</div>
-            <div className="node node-c">DATA</div>
-            <div className="node node-d">COMMS</div>
-            <span className="link link-a" />
-            <span className="link link-b" />
-            <span className="link link-c" />
-            <span className="link link-d" />
-            <span className="scan-line" />
-          </div>
-
-          <div className="system-metrics">
-            <div>
-              <strong>3</strong>
-              <span>campuses</span>
-            </div>
-            <div>
-              <strong>9</strong>
-              <span>validated scenarios</span>
-            </div>
-            <div>
-              <strong>D</strong>
-              <span>distinction WAM</span>
-            </div>
-          </div>
-
-          <div className="system-card-foot">
-            <span>MELBOURNE, AUSTRALIA</span>
-            <span>AEST / AEDT</span>
-          </div>
-        </aside>
+        <SignalField />
 
         <div className="hero-index" aria-hidden="true">
-          <span>01</span>
-          <span>PORTFOLIO / 2026</span>
+          <span>SCROLL TO DISCOVER ↓</span>
+          <span>SECURITY IS A MINDSET. CURIOSITY IS THE START.</span>
         </div>
         </section>
 
-      <section className="section profile-section" aria-labelledby="profile-title">
+      <div className="discipline-strip" aria-label="Areas of focus">
+        <span>Security by design</span><i aria-hidden="true">✳</i>
+        <span>Systems that connect</span><i aria-hidden="true">✳</i>
+        <span>Thinking that translates</span><i aria-hidden="true">✳</i>
+      </div>
+
+      <section className="section profile-section" aria-labelledby="profile-title" data-reveal>
         <div className="section-label">
           <span>01</span>
           <p>PROFILE</p>
@@ -217,11 +186,11 @@ export default function Home() {
           </div>
           <p className="section-note">PROJECTS / SIMULATIONS / 2025—2026</p>
         </div>
-        <h2 id="work-title" className="visually-hidden">
-          Selected work
+        <h2 id="work-title" className="work-display" data-reveal>
+          A curious mind.<br /><span>A practical approach.</span>
         </h2>
 
-        <article className="feature-project">
+        <article className="feature-project" data-reveal data-spotlight>
           <div className="project-number">01</div>
           <div className="project-main">
             <div className="project-kicker">
@@ -229,6 +198,16 @@ export default function Home() {
               <span>NETWORK SECURITY</span>
             </div>
             <h3>Secure multi-campus enterprise network</h3>
+            <div className="project-art" aria-label="Network illustration connecting three campuses through encrypted tunnels" role="img">
+              <div className="topology-line topology-line-a" aria-hidden="true" />
+              <div className="topology-line topology-line-b" aria-hidden="true" />
+              <div className="topology-line topology-line-c" aria-hidden="true" />
+              <span className="topology-node topology-node-a">CAMPUS 01<small>SEGMENTED LAN</small></span>
+              <span className="topology-node topology-node-b">CAMPUS 02<small>SEGMENTED LAN</small></span>
+              <span className="topology-node topology-node-c">CAMPUS 03<small>SEGMENTED LAN</small></span>
+              <span className="topology-core">↗<small>IPsec / BGP</small></span>
+              <div className="project-art-caption"><span>CONNECTED. ENCRYPTED. VALIDATED.</span><span>01 — NETWORK ARCHITECTURE</span></div>
+            </div>
             <p className="project-lead">
               Architected and deployed a simulated three-campus enterprise network
               with segmented LANs, resilient routing, encrypted tunnels and
@@ -274,7 +253,7 @@ export default function Home() {
           </div>
         </article>
 
-        <article className="secondary-project">
+        <article className="secondary-project" data-reveal data-spotlight>
           <div className="project-number">02</div>
           <div>
             <div className="project-kicker">
@@ -307,7 +286,7 @@ export default function Home() {
           Professional experience
         </h2>
 
-        <div className="experience-grid">
+        <div className="experience-grid" data-reveal>
           <div className="experience-title-block">
             <p className="mono-line">CURRENT ROLE</p>
             <h3>AI Marketing Strategy Intern</h3>
@@ -375,7 +354,7 @@ export default function Home() {
 
         <div className="capability-grid">
           {capabilityGroups.map((group) => (
-            <article key={group.code} className="capability-card">
+            <article key={group.code} className="capability-card" data-reveal data-spotlight>
               <div className="capability-code">{group.code}</div>
               <h3>{group.title}</h3>
               <ul>
@@ -403,7 +382,7 @@ export default function Home() {
 
         <div className="education-list">
           {credentials.map((credential) => (
-            <article key={credential.title}>
+            <article key={credential.title} data-reveal>
               <p className="education-year">{credential.year}</p>
               <div>
                 <h3>{credential.title}</h3>
@@ -446,18 +425,19 @@ export default function Home() {
           <span />
           <i />
         </div>
-        <div className="contact-content">
+        <div className="contact-content" data-reveal>
           <div className="eyebrow">
             <span className="status-dot" aria-hidden="true" />
             OPEN TO CYBERSECURITY, DIGITAL SYSTEMS & DATA OPPORTUNITIES
           </div>
           <h2>
-            Let&apos;s build something
+            Have something
             <br />
-            <span>worth securing.</span>
+            <span>in mind?</span>
           </h2>
           <p>
-            I&apos;m based in Melbourne, Australia and graduating at the end of 2026.
+            Let&apos;s build something worth securing. I&apos;m based in Melbourne,
+            Australia and graduating at the end of 2026.
           </p>
           <div className="contact-links">
             <a href="mailto:shalommuhoozi@gmail.com">
@@ -475,6 +455,6 @@ export default function Home() {
           <a href="#top">BACK TO TOP ↑</a>
         </div>
       </footer>
-    </>
+    </PortfolioMotion>
   );
 }

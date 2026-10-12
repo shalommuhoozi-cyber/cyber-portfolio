@@ -4,9 +4,7 @@ import "./globals.css";
 const themeScript = `(() => {
   try {
     const savedTheme = localStorage.getItem("shalom-portfolio-theme");
-    const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches
-      ? "light"
-      : "dark";
+    const preferredTheme = "dark";
     const theme = savedTheme === "light" || savedTheme === "dark"
       ? savedTheme
       : preferredTheme;

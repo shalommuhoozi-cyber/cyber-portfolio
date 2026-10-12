@@ -16,6 +16,19 @@ credentials.
 - Cybersecurity, networking, programming and strategy capabilities
 - Downloadable résumé and direct contact details
 - Responsive, keyboard-accessible design with reduced-motion support
+- Original WebGL sculpture with Iris, Tide and Ember palettes, pointer response
+  and a persistent motion toggle; static artwork when WebGL is unavailable
+- Editorial typography, animated project diagrams and subtle section entrances
+
+## Visual direction
+
+Inspired by [Lenin's portfolio](https://www.lenin.dev/),
+[Shader Gradient](https://shadergradient.co/) and
+[Unicorn Studio](https://www.unicorn.studio/). The effects are original local
+implementations, with no third-party scene embed or account required.
+The sculpture pauses outside the viewport and in hidden tabs, caps pixel density
+and renders at 30 fps. Reduced-motion preferences disable animation by default.
+The page content and contact links remain usable without JavaScript.
 
 ## Technology
 
