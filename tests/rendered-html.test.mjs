@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${path}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -47,6 +47,17 @@ test("server-renders the cybersecurity portfolio", async () => {
     /(?:\u00c3.|\u00c2.|\u00e2[\u0080-\u00bf])/u,
   );
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+});
+
+test("returns a custom 404 with working recovery links for a missing nested route", async () => {
+  const response = await render("/missing/nested/page");
+  assert.equal(response.status, 404);
+  const html = await response.text();
+  assert.match(html, /404\. Page not found\./);
+  assert.match(html, /SIGNAL LOST \/ ERROR 404/);
+  assert.match(html, /href="\/"[^>]*>Back to home/);
+  assert.match(html, /href="\/#work"/);
+  assert.match(html, /<meta(?=[^>]*\bname="robots")(?=[^>]*\bcontent="noindex")[^>]*>/);
 });
 
 test("keeps GitHub Pages export isolated from the Sites build", async () => {

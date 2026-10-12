@@ -19,6 +19,8 @@ credentials.
 - Original WebGL sculpture with Iris, Tide and Ember palettes, pointer response
   and a persistent motion toggle; static artwork when WebGL is unavailable
 - Editorial typography, animated project diagrams and subtle section entrances
+- Custom 404 page with original 3D lettering, interactive electric pulses,
+  keyboard controls and reduced-motion support, inspired by Trionn's error page
 
 ## Visual direction
 
