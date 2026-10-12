@@ -53,9 +53,9 @@ test("returns a custom 404 with working recovery links for a missing nested rout
   const response = await render("/missing/nested/page");
   assert.equal(response.status, 404);
   const html = await response.text();
-  assert.match(html, /404\. Page not found\./);
-  assert.match(html, /SIGNAL LOST \/ ERROR 404/);
-  assert.match(html, /href="\/"[^>]*>Back to home/);
+  assert.match(html, /PAGE NOT FOUND/);
+  assert.match(html, /Lost<br\s*\/?/);
+  assert.match(html, /href="\/"[^>]*>[\s\S]*?Reconnect/);
   assert.match(html, /href="\/#work"/);
   assert.match(html, /<meta(?=[^>]*\bname="robots")(?=[^>]*\bcontent="noindex")[^>]*>/);
 });

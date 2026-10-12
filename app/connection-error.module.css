@@ -1,0 +1,128 @@
+.page {
+  --tile-top: #49405e;
+  --tile-bottom: #272130;
+  --tile-side: #1b1722;
+  --tile-outline: #9784b6;
+  --route-muted: #51495e;
+  --route-restored: #b8d3aa;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--page-bg);
+}
+:global([data-theme="light"]) .page { --tile-top: #eee7fc; --tile-bottom: #c7b8dc; --tile-side: #b3a0ca; --tile-outline: #89709f; --route-muted: #b2a5bd; --route-restored: #386536; }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 4.8vw; }
+.headerActions { display: flex; align-items: center; gap: 28px; }
+.contact { display: inline-flex; align-items: center; gap: 22px; min-height: 44px; font-size: 12px; }
+.contact span { color: var(--accent); font-size: 20px; }
+.main { flex: 1; display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); align-items: center; gap: 12px; padding: 32px 4.8vw 40px; min-height: 510px; }
+.copy { position: relative; z-index: 1; }
+.eyebrow { display: flex; align-items: center; gap: 13px; color: var(--muted); font: 9px/1.5 var(--mono); letter-spacing: .10em; margin: 0 0 34px; }
+.eyebrow > span { padding: 7px 11px; border: 1px solid var(--line-strong); border-radius: 5px; color: var(--accent); font-size: 12px; letter-spacing: .02em; }
+.title { font-size: clamp(64px, 7.6vw, 122px); font-weight: 400; line-height: .98; letter-spacing: -.07em; margin: 0; }
+.title em { display: inline-block; margin-top: 8px; padding-right: 12px; color: var(--accent); font-family: Georgia, serif; font-weight: 400; letter-spacing: -.07em; }
+.message { max-width: 360px; margin: 30px 0 0; color: var(--copy); font-size: 14px; line-height: 1.8; }
+.links { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; margin-top: 32px; }
+.reconnect { display: inline-flex; align-items: center; gap: 11px; min-height: 52px; padding: 0 20px; border-radius: 30px; color: var(--accent-contrast); background: var(--accent); font-size: 12px; transition: transform .2s, box-shadow .2s; }
+.reconnect:hover, .reconnect:focus-visible { transform: translateY(-3px); box-shadow: 0 7px 25px color-mix(in srgb, var(--accent) 20%, transparent); }
+.reconnect[aria-disabled="true"] { cursor: progress; }
+.reconnect svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.35; stroke-linejoin: round; stroke-linecap: round; }
+.reconnect > span { margin-left: 11px; font-size: 20px; }
+.workLink { display: inline-flex; align-items: center; gap: 17px; min-height: 44px; font-size: 11px; }
+.workLink > span { color: var(--accent); font-size: 18px; }
+.workLink:hover { color: var(--accent); }
+.status { min-height: 17px; color: var(--muted); font: 9px/1.7 var(--mono); margin: 17px 0 0; }
+.network { position: relative; min-width: 0; width: 100%; margin: 12px 0 0; }
+.diagramHeader, .diagramCaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; font: 8px/1.6 var(--mono); letter-spacing: .06em; color: var(--muted); }
+.diagramHeader { margin: 0 3%; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+.routeState { display: flex; align-items: center; gap: 8px; }
+.routeState i { display: inline-block; width: 5px; height: 5px; background: var(--muted); border-radius: 50%; }
+.diagram { display: block; width: 100%; height: auto; overflow: visible; }
+.grid { stroke-width: .75; }
+.routeShadow { stroke: #0004; stroke-width: 7px; filter: blur(4px); }
+.outgoing, .incoming, .bridge, .connectedRoute { stroke-width: 2.2; }
+.outgoing { stroke: var(--accent); }
+.incoming { stroke: var(--route-muted); stroke-dasharray: 5 5; }
+.bridgeHint { stroke: var(--line-strong); stroke-width: 1; stroke-dasharray: 2 5; }
+.bridge { opacity: 0; stroke: var(--route-restored); stroke-dasharray: 65; stroke-dashoffset: 65; }
+.connectedRoute { stroke: var(--route-restored); opacity: 0; }
+.brokenEnds { fill: var(--page-bg); stroke: var(--accent); stroke-width: 1.4; }
+.brokenEnds path { opacity: .7; stroke-width: 1; }
+.breakLabel line { stroke: var(--line-strong); stroke-dasharray: 2 4; }
+.breakLabel rect { fill: var(--page-bg); stroke: var(--line-strong); stroke-width: .7; }
+.breakLabel text { fill: var(--muted); font: 7px var(--mono); letter-spacing: .05em; }
+.packet, .packetGlow { fill: var(--accent); offset-distance: 0%; animation: route-request 4s ease-in-out infinite; }
+.packetGlow { opacity: .6; }
+.returnSignal { fill: var(--route-restored); opacity: 0; }
+.nodeShadow { fill: #0003; filter: blur(8px); }
+.tileTop { fill: url(#route-tile); stroke: var(--tile-outline); stroke-width: .8; }
+.tileSide { fill: var(--tile-side); stroke: var(--tile-outline); stroke-opacity: .4; stroke-width: .6; }
+.nodeIcon { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+.nodeGuide { stroke: var(--line-strong); stroke-width: 1; stroke-dasharray: 2 3; }
+.nodeIndex { fill: var(--muted); font: 8px var(--mono); letter-spacing: .1em; }
+.nodeName { fill: var(--page-text); font: 12px var(--sans); letter-spacing: -.02em; }
+.arrivalRing { fill: none; stroke: var(--route-restored); stroke-width: 1; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.diagramCaption { padding: 15px 0 0; margin: 0 3%; border-top: 1px solid var(--line); }
+.network[data-connecting="true"] .bridge { opacity: 1; stroke-dashoffset: 0; transition: stroke-dashoffset .35s ease-out; }
+.network[data-connecting="true"] .connectedRoute { opacity: 1; transition: opacity .3s .35s; }
+.network[data-connecting="true"] .brokenEnds, .network[data-connecting="true"] .breakLabel, .network[data-connecting="true"] .bridgeHint, .network[data-connecting="true"] .packet, .network[data-connecting="true"] .packetGlow { opacity: 0; animation: none; }
+.network[data-connecting="true"] .routeState { color: var(--route-restored); }
+.network[data-connecting="true"] .routeState i { background: var(--route-restored); }
+.network[data-connecting="true"] .returnSignal { animation: route-home .85s .2s ease-in-out both; }
+.network[data-connecting="true"] .arrivalRing { animation: route-arrival .45s .85s ease-out both; }
+.network[data-connecting="true"] .homeNode .nodeIcon { stroke: var(--route-restored); }
+.footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 4.8vw; gap: 22px; color: var(--muted); font: 7px/1.5 var(--mono); letter-spacing: .06em; }
+.footer i { color: var(--accent); font-style: normal; margin: 0 10px; }
+.footer button { background: none; border: 0; color: var(--copy); font: 9px/1.5 var(--mono); min-height: 44px; padding: 0 4px; }
+.footer button:hover { color: var(--accent); }
+:global([data-motion="off"]) .packet, :global([data-motion="off"]) .packetGlow { animation: none; opacity: 0; }
+@keyframes route-request { 0% { offset-distance: 0%; opacity: 0; } 12% { opacity: 1; } 75% { offset-distance: 100%; opacity: 1; } 85%, 100% { offset-distance: 100%; opacity: 0; } }
+@keyframes route-home { 0% { offset-distance: 0%; opacity: 0; } 10%, 90% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+@keyframes route-arrival { 0% { transform: scale(.3); opacity: .8; } 100% { transform: scale(1.8); opacity: 0; } }
+@media (min-width: 1500px) { .main { gap: 4vw; } }
+@media (max-width: 800px) {
+  .main { grid-template-columns: 1fr; padding: 46px 6vw 30px; gap: 35px; }
+  .copy { max-width: 550px; }
+  .title { font-size: clamp(62px, 12vw, 100px); }
+  .eyebrow { margin-bottom: 25px; }
+  .message { max-width: 400px; margin-top: 23px; }
+  .network { width: min(100%, 580px); justify-self: center; }
+  .diagram { margin: -15px 0 -30px; }
+}
+@media (max-width: 600px) {
+  .header { padding: 20px 6vw; gap: 10px; }
+  .header :global(.brand-mark) { font-size: 37px; }
+  .header :global(.brand-copy) { gap: 6px; }
+  .header :global(.brand-copy strong) { font-size: 11px; }
+  .header :global(.brand-copy small) { font-size: 6px; }
+  .headerActions { gap: 0; }
+  .contact { display: none; }
+  .header :global(.theme-toggle) { min-width: 62px; }
+  .main { padding-top: 34px; gap: 40px; }
+  .title { font-size: clamp(54px, 16vw, 78px); }
+  .message { font-size: 13px; max-width: 330px; }
+  .links { gap: 14px 20px; margin-top: 24px; }
+  .reconnect { min-height: 48px; padding-inline: 16px; font-size: 11px; gap: 9px; }
+  .reconnect > span { margin-left: 5px; }
+  .workLink { font-size: 10px; gap: 10px; }
+  .status { font-size: 8px; }
+  .diagramHeader, .diagramCaption { font-size: 6px; letter-spacing: .03em; }
+  .diagramHeader { padding-bottom: 12px; }
+  .diagramCaption { padding-top: 12px; }
+  .footer { padding-inline: 6vw; font-size: 6px; gap: 12px; }
+  .footer > span { max-width: 190px; line-height: 1.8; }
+  .footer i { margin: 0 3px; }
+  .footer button { flex-shrink: 0; font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reconnect { transition: none; }
+  .reconnect:hover, .reconnect:focus-visible { transform: none; }
+  :global(:root:not([data-motion="on"])) .packet, :global(:root:not([data-motion="on"])) .packetGlow { animation: none; opacity: 0; }
+}
+@media (forced-colors: active) {
+  .outgoing, .incoming, .bridge, .connectedRoute, .brokenEnds, .nodeIcon { stroke: CanvasText; }
+  .tileTop, .tileSide, .brokenEnds, .breakLabel rect { fill: Canvas; stroke: CanvasText; }
+  .nodeName, .nodeIndex, .breakLabel text { fill: CanvasText; }
+  .packet, .returnSignal { fill: CanvasText; }
+  .reconnect { border: 1px solid ButtonText; }
+}

@@ -1,5 +1,5 @@
-import LostSignal from "./lost-signal";
+import ConnectionError from "./connection-error";
 
 export default function NotFound() {
-  return <LostSignal homeHref={`${process.env.PAGES_BASE_PATH ?? ""}/`} />;
+  return <ConnectionError homeHref={`${process.env.PAGES_BASE_PATH ?? ""}/`} />;
 }
