@@ -75,7 +75,7 @@ test("keeps GitHub Pages export isolated from the Sites build", async () => {
   assert.match(config, /output:\s*"export"/);
   assert.match(config, /PAGES_BASE_PATH/);
   assert.doesNotMatch(layout, /from "next\/headers"|headers\(\)/);
-  assert.match(layout, /shalommuhoozi-cyber\.github\.io/);
+  assert.match(layout, /shruba256\.github\.io/);
   assert.match(layout, /shalom-portfolio-theme/);
   assert.match(layout, /canonicalUrl/);
   assert.match(page, /pagesBasePath.*Shalom-Rubaramira-Resume\.pdf/s);

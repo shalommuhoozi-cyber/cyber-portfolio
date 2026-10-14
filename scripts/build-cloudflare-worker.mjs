@@ -50,7 +50,7 @@ const archive = gzipSync(Buffer.from(JSON.stringify(assets)), {
 }).toString("base64");
 
 const worker = `const ARCHIVE = ${JSON.stringify(archive)};
-const GITHUB_ASSET_ROOT = "https://shalommuhoozi-cyber.github.io/cyber-portfolio";
+const GITHUB_ASSET_ROOT = "https://shruba256.github.io/cyber-portfolio";
 let assetsPromise;
 
 function decodeBase64(value) {

@@ -6,7 +6,7 @@ credentials.
 
 ## Live sites
 
-- [GitHub Pages](https://shalommuhoozi-cyber.github.io/cyber-portfolio/)
+- [GitHub Pages](https://shruba256.github.io/cyber-portfolio/)
 - [Sites deployment](https://shalom-rubaramira-cyber.shalommuhoozi.chatgpt.site)
 
 ## Highlights

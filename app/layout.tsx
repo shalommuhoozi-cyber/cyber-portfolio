@@ -17,19 +17,21 @@ const themeScript = `(() => {
 })();`;
 
 const pagesBasePath = process.env.PAGES_BASE_PATH ?? "";
+const githubPagesUrl = (
+  process.env.PAGES_SITE_URL || "https://shruba256.github.io/cyber-portfolio"
+).replace(/\/+$/, "");
 const isCloudflarePages = Boolean(
   process.env.CF_PAGES || process.env.CLOUDFLARE_PAGES,
 );
 const isCloudflareWorkers = Boolean(process.env.CLOUDFLARE_WORKERS);
 const siteUrl = pagesBasePath
-  ? `https://shalommuhoozi-cyber.github.io${pagesBasePath}`
+  ? githubPagesUrl
   : isCloudflareWorkers
     ? "https://portfolio.shalommuhoozi-cyber.workers.dev"
     : isCloudflarePages
       ? "https://shalom-cyber-portfolio.pages.dev"
       : "https://shalom-rubaramira-cyber.shalommuhoozi.chatgpt.site";
-const canonicalUrl =
-  "https://shalommuhoozi-cyber.github.io/cyber-portfolio/";
+const canonicalUrl = `${githubPagesUrl}/`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
